@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BoyLose2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.11666666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "e521a6c4-f9a3-451d-8aec-24f85e1eaab7"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "e09093ee-5214-4ca8-b74f-35604321a048"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "a683103d-8494-40ef-83f7-d1af09eeb95f"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "bec961f4-8a5f-4b49-b66c-26b29655603e"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "be6dae94-df79-4223-adb7-0a4e26280a5d"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "c18b0a1e-1f09-4119-a3e1-f9a9264217ed"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "69df383f-1cfd-4180-a20a-71a2e19f3ea3"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

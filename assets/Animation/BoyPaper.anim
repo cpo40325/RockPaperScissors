@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BoyPaper",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "93bd0538-89d6-4128-a760-e9ffc9862dd2"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "6bc6a44d-961c-4bfe-84e5-e4110af5cc95"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "9abc667f-e8b0-4a69-ab73-9e8571cf6632"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "a0031a9e-bac6-4def-8566-72767e045319"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "cd89be9b-7c62-4033-9bc7-ed57820b5b04"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

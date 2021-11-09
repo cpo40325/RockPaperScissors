@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BoyStone",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "fb7096c6-5499-4435-864d-f910396bbf67"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "c765ad96-1320-450b-ac7f-d74288e0344b"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "110dec51-b31f-40e9-94c2-df7edf764733"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "07fecb46-49f4-418a-8699-25e42ed29ea3"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "0c678f46-b143-41da-931a-7da5ef75a813"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

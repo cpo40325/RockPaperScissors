@@ -1,0 +1,67 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BoyWin",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.13333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "a9320ed2-cc4b-47dc-b296-44c10ad34785"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "dc8f9d4b-3cb5-451c-9933-bf2fffbf5faf"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "81891ced-129b-483d-877c-3aa5f3817a8c"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "f14eb645-2c3b-439f-9de0-69d7e018a36b"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "13bd8843-694f-4aa3-8f42-d0c53de2861d"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "7347a57d-657d-4f53-8282-3c5177bf4a26"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "9adad45c-54b6-4991-a61b-cc88f716ae1f"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "cf4c043f-56ca-4c49-ad84-faf7214ca573"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

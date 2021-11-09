@@ -8,21 +8,24 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Girl extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
-
-    @property
-    text: string = 'hello';
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
 
     start () {
 
+        var a = this.getComponent(cc.Animation);
+
+
+
+        a.play('DefaultBoy').speed =0.3 ;
+
+        a.once('stop', ()=>{
+
+            a.play('BoyWin').speed = 0.3;
+
+
+        }, this);
+        
     }
 
-    // update (dt) {}
 }

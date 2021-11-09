@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "BoyScissors",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "97b4db78-43fa-483c-92f2-8da2d9c490f1"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "0bc55ac6-d40d-4521-af23-d330ca138491"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "3d0c2cbb-76f7-4edb-bb4d-ea3d407706d4"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "b47a6f1e-a1fc-46fd-9b74-093d5feb7fd8"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "31cabad3-95f4-4aef-a744-6069a9515aa6"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

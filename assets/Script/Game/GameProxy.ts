@@ -1,3 +1,4 @@
+import { array } from './../../../creator.d';
 import KYPrueProxy from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Proxy/KYPureProxy";
 import NotificationMap from "../Map/NotificationMap";
 import TypeMap from "../Map/TypeMap";
@@ -10,7 +11,7 @@ export default class GameProxy extends KYPrueProxy {
     static Name = 'GameProxy';
 
 
-    static WIN :number = 3;
+    static WIN: number = 3;
 
     isGameOver = false;
 
@@ -30,62 +31,73 @@ export default class GameProxy extends KYPrueProxy {
 
 
 
-    getResult(player, computer) {
-
-
-        switch (player) {
-
-            case TypeMap.TYPE_PAPER:
-
-                switch (computer) {
-                    case TypeMap.TYPE_PAPER:
-                        this.tie();
-                        break;
-                    case TypeMap.TYPE_SISSORS:
-                        this.boyScore();
-                        break;
-                    case TypeMap.TYPE_STONE:
-                        this.girlScore();
-                        break;
-                }
-
-                break;
-            case TypeMap.TYPE_SISSORS:
-
-                switch (computer) {
-                    case TypeMap.TYPE_PAPER:
-                        this.girlScore();
-                        break;
-                    case TypeMap.TYPE_SISSORS:
-                        this.tie();
-                        break;
-                    case TypeMap.TYPE_STONE:
-                        this.boyScore();
-                        break;
-                }
-
-                break;
-
-            case TypeMap.TYPE_STONE:
-
-                switch (computer) {
-                    case TypeMap.TYPE_PAPER:
-                        this.boyScore();
-                        break;
-                    case TypeMap.TYPE_SISSORS:
-                        this.girlScore();
-                        break;
-                    case TypeMap.TYPE_STONE:
-                        this.tie();
-                        break;
-                }
-                break;
+    compare(player, computer) {
 
 
 
+        /**
+         * 0平手
+         * 1玩家贏
+         * -1電腦贏
+         */
+        var result = 0;
+
+
+        if (player == computer) {
+            result = 0;
+        }else{
+            switch (player) {
+
+                case TypeMap.TYPE_PAPER:
+    
+                    switch (computer) {
+                        case TypeMap.TYPE_SISSORS:
+                            result = -1;
+                            break;
+                        case TypeMap.TYPE_STONE:
+                            result = 1;
+                            break;
+                    }
+                    break;
+                case TypeMap.TYPE_SISSORS:
+    
+                    switch (computer) {
+                        case TypeMap.TYPE_PAPER:
+                            result = 1;
+                            break;
+                        case TypeMap.TYPE_STONE:
+                            result = -1;
+                            break;
+                    }
+                    break;
+    
+                case TypeMap.TYPE_STONE:
+    
+                    switch (computer) {
+                        
+                        case TypeMap.TYPE_PAPER:
+                            result = -1;
+                            break;
+                        case TypeMap.TYPE_SISSORS:
+                            result = 1;
+                            break;
+                    }
+                    break;
+            }
         }
 
 
+
+        // this.doResult(result, );
+
+
+        var array: {[key: string]: number} = {
+            'player': player,
+            'computer': computer
+        }
+
+
+        this.sendNotification(NotificationMap.THREW_RESULT, array);
 
     }
     tie() {
@@ -95,12 +107,11 @@ export default class GameProxy extends KYPrueProxy {
 
     playerThrew(playerThrew) {
 
-        if(this.isGameOver){
-            return;
+        if (this.isGameOver) {
+            // return;
         }
-        this.getResult(playerThrew, this.computerRandomThrew());
+        this.compare(playerThrew, this.computerRandomThrew());
     }
-f
     girlScore() {
         console.log('girlScore');
         this.girl_score++;
@@ -109,7 +120,7 @@ f
             this.isGameOver = true;
         }
         this.sendNotification(NotificationMap.GIRL_SCORE);
-        
+
     }
     boyScore() {
         console.log('boyScore');
