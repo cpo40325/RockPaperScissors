@@ -1,6 +1,5 @@
 import KYPureFacade from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Core/KYPureFacade";
 import LayoutBoyMediator from "../LayoutBoy/LayoutBoyMediator";
-import BoyMediator from "./BoyMediator";
 
 const {ccclass, property} = cc._decorator;
 
@@ -12,7 +11,6 @@ export default class Boy extends cc.Component {
 
 
     start () {
-        KYPureFacade.getInstance('MainFacade').registerMediator(new BoyMediator(this));
     }
 
 }

@@ -16,7 +16,7 @@ export default class LayoutBoyMediator extends KYPureMediator {
 
 
     listNotificationInterests(): string[] {
-        return [NotificationMap.BOY_SCORE, NotificationMap.BOY_WIN];
+        return [NotificationMap.BOY_SCORE];
     }
 
 

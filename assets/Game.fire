@@ -259,7 +259,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "spriteGirl",
+    "_name": "SpriteGirl",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -300,8 +300,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -256.909,
-        -194.84,
+        -217.278,
+        -161.814,
         0,
         0,
         0,
@@ -394,7 +394,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "spriteBoy",
+    "_name": "SpriteBoy",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -423,8 +423,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 152,
-      "height": 249
+      "width": 800,
+      "height": 600
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -435,8 +435,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        271.105,
-        -184.762,
+        200.1,
+        -88.988,
         0,
         0,
         0,
@@ -697,8 +697,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        121.541,
-        35.747,
+        352.747,
+        248.207,
         0,
         0,
         0,
@@ -842,8 +842,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -116.661,
-        38.179,
+        -360.365,
+        231.893,
         0,
         0,
         0,

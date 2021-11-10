@@ -1,4 +1,5 @@
 import MainFacade from "../ＭainFacade";
+import GameMediator from "./GameMediator";
 
 const {ccclass, property} = cc._decorator;
 
@@ -11,6 +12,7 @@ export default class Game extends cc.Component {
 
 
         this.facade = new MainFacade();
+        this.facade.registerMediator(new GameMediator(this));
 
     }
 

@@ -1,4 +1,3 @@
-import { array } from './../../../creator.d';
 import KYPrueProxy from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Proxy/KYPureProxy";
 import NotificationMap from "../Map/NotificationMap";
 import TypeMap from "../Map/TypeMap";
@@ -45,11 +44,11 @@ export default class GameProxy extends KYPrueProxy {
 
         if (player == computer) {
             result = 0;
-        }else{
+        } else {
             switch (player) {
 
                 case TypeMap.TYPE_PAPER:
-    
+
                     switch (computer) {
                         case TypeMap.TYPE_SISSORS:
                             result = -1;
@@ -60,7 +59,7 @@ export default class GameProxy extends KYPrueProxy {
                     }
                     break;
                 case TypeMap.TYPE_SISSORS:
-    
+
                     switch (computer) {
                         case TypeMap.TYPE_PAPER:
                             result = 1;
@@ -70,11 +69,11 @@ export default class GameProxy extends KYPrueProxy {
                             break;
                     }
                     break;
-    
+
                 case TypeMap.TYPE_STONE:
-    
+
                     switch (computer) {
-                        
+
                         case TypeMap.TYPE_PAPER:
                             result = -1;
                             break;
@@ -86,24 +85,31 @@ export default class GameProxy extends KYPrueProxy {
             }
         }
 
-
-
-        // this.doResult(result, );
-
-
-        var array: {[key: string]: number} = {
+        var array: { [key: string]: number } = {
             'player': player,
-            'computer': computer
+            'computer': computer,
+            'result': result
+        }
+
+
+
+
+        if (result == 1) {
+            this.girl_score++;
+            console.log('girl score');
+            this.sendNotification(NotificationMap.GIRL_SCORE);
+
+        } else if (result == -1) {
+            this.boy_score++;
+            console.log('boy score');
+            this.sendNotification(NotificationMap.BOY_SCORE);
         }
 
 
         this.sendNotification(NotificationMap.THREW_RESULT, array);
 
     }
-    tie() {
-        console.log('tie');
-        this.sendNotification(NotificationMap.TIE);
-    }
+
 
     playerThrew(playerThrew) {
 
@@ -112,37 +118,43 @@ export default class GameProxy extends KYPrueProxy {
         }
         this.compare(playerThrew, this.computerRandomThrew());
     }
-    girlScore() {
-        console.log('girlScore');
-        this.girl_score++;
-        if (this.girl_score == GameProxy.WIN) {
-            this.girlWin();
-            this.isGameOver = true;
-        }
-        this.sendNotification(NotificationMap.GIRL_SCORE);
 
-    }
-    boyScore() {
-        console.log('boyScore');
-        this.boy_score++;
-        if (this.boy_score == GameProxy.WIN) {
-            this.boyWin();
-            this.isGameOver = true;
-        }
-        this.sendNotification(NotificationMap.BOY_SCORE);
+    // tie() {
+    //     console.log('tie');
+    //     this.sendNotification(NotificationMap.TIE);
+    // }
 
-    }
+    // girlScore() {
+    //     console.log('girlScore');
+    //     this.girl_score++;
+    //     if (this.girl_score == GameProxy.WIN) {
+    //         this.girlWin();
+    //         this.isGameOver = true;
+    //     }
+    //     this.sendNotification(NotificationMap.GIRL_SCORE);
+
+    // }
+    // boyScore() {
+    //     console.log('boyScore');
+    //     this.boy_score++;
+    //     if (this.boy_score == GameProxy.WIN) {
+    //         this.boyWin();
+    //         this.isGameOver = true;
+    //     }
+    //     this.sendNotification(NotificationMap.BOY_SCORE);
+
+    // }
 
 
 
-    boyWin() {
-        console.log('boyWin');
+    // boyWin() {
+    //     console.log('boyWin');
 
-        this.sendNotification(NotificationMap.BOY_WIN);
-    }
-    girlWin() {
-        console.log('girlWin');
+    //     this.sendNotification(NotificationMap.BOY_WIN);
+    // }
+    // girlWin() {
+    //     console.log('girlWin');
 
-        this.sendNotification(NotificationMap.GIRL_WIN);
-    }
+    //     this.sendNotification(NotificationMap.GIRL_WIN);
+    // }
 }
