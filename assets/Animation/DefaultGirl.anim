@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "DefaultGirl",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.1,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "dc1e47fb-4177-462c-a95c-490fb30cd77c"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "c80a6e80-67c4-43ec-ab6d-7b095d71cdca"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "2a238979-11fd-4944-a5ee-6aa133941412"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "542c0bf2-fa52-4e63-be72-f914c3e06b4c"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "18c42e50-4051-4c5f-bf29-3fb736a0c624"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "646ffc08-abf5-493f-adbb-4ab92b56ab97"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

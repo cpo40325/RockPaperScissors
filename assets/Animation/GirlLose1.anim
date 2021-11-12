@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "GirlLose1",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c08e02fa-39f0-4a30-bdb8-db6cee1bee55"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "afeaeebf-c772-408b-b207-b665613e6711"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "7c19d812-8bce-4594-acfd-ca5c8c651440"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "424a39b5-0718-4acc-ac73-2efd2b494eeb"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "55134e4c-49a6-486f-94a7-71753165ea7f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

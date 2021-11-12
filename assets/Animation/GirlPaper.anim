@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "GirlPaper",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "53eb9c83-ae7b-45e8-ba55-a54cade7297d"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "52ab9d1b-3ae6-4c09-b6a2-e95e03feed1b"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "7b21b790-2a53-48a9-ae47-1fbd78341441"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "1f941bb0-e865-4188-a421-5a14547957cc"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "7001cf96-3905-4355-9f1b-b7749dd04922"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

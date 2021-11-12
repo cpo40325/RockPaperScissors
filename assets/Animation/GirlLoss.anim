@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "GirlLoss",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.15,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "68325f10-4c37-4743-a8df-9a3092346d83"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "c165ddc8-9aa1-4a78-a71f-57a95cb9d997"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "e0b9e949-78a1-4c80-919a-d112be4cff5b"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "296e466a-3c3e-4e72-9360-0e4762a27e7f"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "daa13803-1a7a-43de-b5f8-e9f2593c8cb4"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "c23c21cf-ceea-4372-8454-01cadb96b4e2"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "dec771de-f84c-4e19-bd4f-7c3b4be49e41"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "23585566-34eb-48ab-a2eb-a9de1b943747"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "b9c5dd4e-c654-4810-b1e7-0440d779ca0e"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

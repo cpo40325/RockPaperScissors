@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "GirlScissors",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.08333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "eefd2e20-e6e1-46f6-99ec-64a1bee2521f"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "697f413a-3978-48b6-8e87-b225bee82d66"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "a434ba73-3e1d-4e47-9dcf-ce0c1e2688ee"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "7b2210da-fec5-4111-92b2-f07f38d858fe"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "147f8ecf-ec18-436a-aaa3-0738dbacc4f4"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
