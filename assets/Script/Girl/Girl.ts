@@ -1,4 +1,5 @@
-
+import KYPureFacade from "../../KYCreatorSDK/DesignPatterns/KYPrueMVC/Core/KYPureFacade";
+import LayoutBoyMediator from "../LayoutBoy/LayoutBoyMediator";
 
 const {ccclass, property} = cc._decorator;
 
@@ -6,9 +7,10 @@ const {ccclass, property} = cc._decorator;
 export default class Girl extends cc.Component {
 
 
-    start () {
+    // LIFE-CYCLE C0ALLBACKS:
 
-        
+
+    start () {
     }
 
 }

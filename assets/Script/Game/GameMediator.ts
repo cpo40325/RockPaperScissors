@@ -50,6 +50,7 @@ export default class GameMediator extends KYPureMediator {
      
         let boyAnimation = this.getComponent().node.getChildByName('SpriteBoy').getComponent(cc.Animation);
 
+        let girlAnimation = this.getComponent().node.getChildByName('SpriteGirl').getComponent(cc.Animation);
 
         boyAnimation.once('stop',()=>{
 
@@ -59,7 +60,14 @@ export default class GameMediator extends KYPureMediator {
                 boyAnimation.play('BoyWin').speed = this.animSpeed;
             }
         })
+        girlAnimation.once('stop',()=>{
 
+            if(array.result == 1){
+                girlAnimation.play('GirlWin').speed = this.animSpeed;
+            }else if(array.result == -1){
+                girlAnimation.play('GirlLose'+ Math.ceil(Math.random()*3 )).speed = this.animSpeed;
+            }
+        })
         switch (array.computer) {
 
             case TypeMap.TYPE_PAPER:
@@ -77,7 +85,23 @@ export default class GameMediator extends KYPureMediator {
                 break;
 
         }
+        switch (array.player) {
 
+            case TypeMap.TYPE_PAPER:
+                girlAnimation.play('GirlPaper').speed = this.animSpeed;
+
+                break;
+
+            case TypeMap.TYPE_SISSORS:
+                girlAnimation.play('GirlScissors').speed = this.animSpeed;
+
+                break;
+            case TypeMap.TYPE_STONE:
+                girlAnimation.play('GirlStone').speed = this.animSpeed;
+
+                break;
+
+        }
         
 
         // a.play('DefaultBoy').speed =0.3 ;
