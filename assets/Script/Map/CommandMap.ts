@@ -1,4 +1,5 @@
 
 export default {
-    THREW:'threw'
+    THREW:'threw',
+    RESTART:'restart'
 };

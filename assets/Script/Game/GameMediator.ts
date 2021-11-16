@@ -1,5 +1,6 @@
 import KYPureMediator from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Mediator/KYPureMediator";
 import KYPureNotification from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Observer/KYPureNotification";
+import CommandMap from "../Map/CommandMap";
 import NotificationMap from "../Map/NotificationMap";
 import TypeMap from "../Map/TypeMap";
 import Game from "./Game";
@@ -23,7 +24,13 @@ export default class GameMediator extends KYPureMediator {
         this.boyAnimation = this.getComponent().node.getChildByName('SpriteBoy').getComponent(cc.Animation);
         this.girlAnimation = this.getComponent().node.getChildByName('SpriteGirl').getComponent(cc.Animation);
         
+        let stateBoy = this.boyAnimation.play('DefaultBoy');
 
+        let stateGirl = this.girlAnimation.play('DefaultGirl');
+        stateGirl.speed = this.animSpeed;
+        stateBoy.speed = this.animSpeed;
+        stateBoy.wrapMode = cc.WrapMode.Loop;
+        stateGirl.wrapMode = cc.WrapMode.Loop;
 
         this.boyAnimation.on('finished',function(){
 
@@ -35,13 +42,12 @@ export default class GameMediator extends KYPureMediator {
             if(clip.search('Win') != -1 || clip.search('Lose') != -1){
                 
 
-                this.asyncTest();
+                this.restartAnimation();
             }
             
 
         },this);
         
-        this.animationRestar();
 
 
 
@@ -51,7 +57,7 @@ export default class GameMediator extends KYPureMediator {
         return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
-    async asyncTest() {
+    async restartAnimation() {
         
         await this.delay(1500);
         let stateBoy = this.boyAnimation.play('DefaultBoy');
@@ -61,22 +67,11 @@ export default class GameMediator extends KYPureMediator {
         stateBoy.speed = this.animSpeed;
         stateBoy.wrapMode = cc.WrapMode.Loop;
         stateGirl.wrapMode = cc.WrapMode.Loop;
+        this.sendNotification(CommandMap.RESTART);
 
   
     }
 
-    animationRestar() {
-        
-        let stateBoy = this.boyAnimation.play('DefaultBoy');
-
-        let stateGirl = this.girlAnimation.play('DefaultGirl');
-        stateGirl.speed = this.animSpeed;
-        stateBoy.speed = this.animSpeed;
-        stateBoy.wrapMode = cc.WrapMode.Loop;
-        stateGirl.wrapMode = cc.WrapMode.Loop;
-
-  
-    }
 
     listNotificationInterests(): string[] {
         return [NotificationMap.THREW_RESULT];
@@ -243,7 +238,7 @@ export default class GameMediator extends KYPureMediator {
             animation.node.runAction(cc.sequence(clipList));
         }else{
             animation.node.runAction(clipList[0]);
-            this.asyncTest();
+            this.restartAnimation();
         }
 
     }

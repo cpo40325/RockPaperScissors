@@ -20,12 +20,19 @@ export default class StoneMediator extends KYPureMediator {
     }
 
 
-    listNotificationInterests(): string[]{
-        return [];
+    listNotificationInterests(): string[] {
+        return [CommandMap.RESTART];
     }
 
 
-    handleNotification(notificantion:KYPureNotification){
+    handleNotification(notificantion: KYPureNotification) {
+
+        switch (notificantion.getName()) {
+            case CommandMap.RESTART:
+                this.updateClickSwitch();
+                break;
+        }
+
 
     }
     onRegister(){
