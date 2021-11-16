@@ -10,6 +10,7 @@ const {ccclass, property} = cc._decorator;
 export default class ScissorsMediator extends KYPureMediator {
 
     static NAME = 'ScissorsMediator'
+    canClick: boolean = true;
 
     constructor(viewComponent: any){
         super(ScissorsMediator.NAME, viewComponent);
@@ -31,10 +32,15 @@ export default class ScissorsMediator extends KYPureMediator {
     }
 
     onClick(){
-        this.sendNotification(CommandMap.THREW, TypeMap.TYPE_SISSORS);
+        if(this.canClick){
+            this.sendNotification(CommandMap.THREW, TypeMap.TYPE_SISSORS);
+            this.canClick = false;
+        }
     }
 
-
+    updateClickSwitch(){
+        this.canClick = true;
+    }
     getComponent(): Scissors{
         return super.getComponent();
     }

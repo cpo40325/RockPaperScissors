@@ -1,9 +1,9 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "BoyLoss",
+  "_name": "GirlPaperWin",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 0.15,
+  "_duration": 0.11666666666666667,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -14,55 +14,43 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "9378ffa0-0f6d-48d9-8361-23bf6f8eda54"
+              "__uuid__": "c0f8c28f-9dac-49b7-8a5c-1118c8561a0f"
             }
           },
           {
             "frame": 0.016666666666666666,
             "value": {
-              "__uuid__": "80e75184-6c04-4f8e-b9fb-291d208f08ee"
+              "__uuid__": "6930af96-264e-47e5-91c2-59be16637d64"
             }
           },
           {
             "frame": 0.03333333333333333,
             "value": {
-              "__uuid__": "e070ee7e-80f3-4f7d-ad89-541c6d2a68c0"
+              "__uuid__": "c8a8cf4c-e49e-4967-a568-64408e5414ee"
             }
           },
           {
             "frame": 0.05,
             "value": {
-              "__uuid__": "5ffa1923-3123-460e-bcb4-92147494bfb4"
+              "__uuid__": "eb9462b6-7968-4732-aedb-a2211e29a45e"
             }
           },
           {
             "frame": 0.06666666666666667,
             "value": {
-              "__uuid__": "89e8af62-763e-431f-ae21-6b364bddbd10"
+              "__uuid__": "950b14ab-2a7c-4a28-a0c3-22d9e053cf96"
             }
           },
           {
             "frame": 0.08333333333333333,
             "value": {
-              "__uuid__": "6959383a-67f4-41d2-b847-8371134ab6f6"
+              "__uuid__": "efb5f91e-05f3-4c11-becc-1b664714cb7e"
             }
           },
           {
             "frame": 0.1,
             "value": {
-              "__uuid__": "2e7b1b26-85d3-4837-9e99-b30089a280bd"
-            }
-          },
-          {
-            "frame": 0.11666666666666667,
-            "value": {
-              "__uuid__": "f98110d1-e33d-4697-96a1-ecfa413579a3"
-            }
-          },
-          {
-            "frame": 0.13333333333333333,
-            "value": {
-              "__uuid__": "28f261c1-e2cf-4383-a997-dccf783f075b"
+              "__uuid__": "573425f2-3864-4e2a-b136-14e2661f8163"
             }
           }
         ]

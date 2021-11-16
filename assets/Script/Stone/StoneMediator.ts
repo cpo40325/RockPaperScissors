@@ -13,6 +13,7 @@ export default class StoneMediator extends KYPureMediator {
 
 
     static NAME = 'StoneMediator'
+    canClick: boolean = true;
 
     constructor(viewComponent: any){
         super(StoneMediator.NAME, viewComponent);
@@ -32,10 +33,15 @@ export default class StoneMediator extends KYPureMediator {
     }
 
     onClick(){
-        this.sendNotification(CommandMap.THREW, TypeMap.TYPE_STONE);
+        if(this.canClick){
+            this.sendNotification(CommandMap.THREW, TypeMap.TYPE_STONE);
+            this.canClick = false;
+        }
         
     }
-
+    updateClickSwitch(){
+        this.canClick = true;
+    }
     getComponent(): Stone{
         return super.getComponent();
     }

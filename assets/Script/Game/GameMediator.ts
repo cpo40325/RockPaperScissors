@@ -13,14 +13,69 @@ export default class GameMediator extends KYPureMediator {
 
 
 
-    boyAnimation: cc.Animation = null;
+    boyAnimation:cc.Animation;
+    girlAnimation:cc.Animation;
+    animSpeed = 0.5;
+    delayTime = 1;
 
     constructor(viewComponent: any) {
         super(GameMediator.NAME, viewComponent);
+        this.boyAnimation = this.getComponent().node.getChildByName('SpriteBoy').getComponent(cc.Animation);
+        this.girlAnimation = this.getComponent().node.getChildByName('SpriteGirl').getComponent(cc.Animation);
+        
+
+
+        this.boyAnimation.on('finished',function(){
 
 
 
+            console.log(this.boyAnimation.currentClip.name);
 
+            let clip = this.boyAnimation.currentClip.name;
+            if(clip.search('Win') != -1 || clip.search('Lose') != -1){
+                
+
+                this.asyncTest();
+            }
+            
+
+        },this);
+        
+        this.animationRestar();
+
+
+
+    }
+
+    delay(ms: number) {
+        return new Promise( resolve => setTimeout(resolve, ms) );
+    }
+
+    async asyncTest() {
+        
+        await this.delay(1500);
+        let stateBoy = this.boyAnimation.play('DefaultBoy');
+
+        let stateGirl = this.girlAnimation.play('DefaultGirl');
+        stateGirl.speed = this.animSpeed;
+        stateBoy.speed = this.animSpeed;
+        stateBoy.wrapMode = cc.WrapMode.Loop;
+        stateGirl.wrapMode = cc.WrapMode.Loop;
+
+  
+    }
+
+    animationRestar() {
+        
+        let stateBoy = this.boyAnimation.play('DefaultBoy');
+
+        let stateGirl = this.girlAnimation.play('DefaultGirl');
+        stateGirl.speed = this.animSpeed;
+        stateBoy.speed = this.animSpeed;
+        stateBoy.wrapMode = cc.WrapMode.Loop;
+        stateGirl.wrapMode = cc.WrapMode.Loop;
+
+  
     }
 
     listNotificationInterests(): string[] {
@@ -39,7 +94,6 @@ export default class GameMediator extends KYPureMediator {
         }
     }
 
-    animSpeed = 0.25;
     resultAnimation(array: { [key: string]: number }) {
 
 
@@ -47,74 +101,155 @@ export default class GameMediator extends KYPureMediator {
         console.log('computer-' + array.computer);
         console.log('result-' + array.result);
 
-     
-        let boyAnimation = this.getComponent().node.getChildByName('SpriteBoy').getComponent(cc.Animation);
 
-        let girlAnimation = this.getComponent().node.getChildByName('SpriteGirl').getComponent(cc.Animation);
+        this.updateList(array);
 
-        boyAnimation.once('stop',()=>{
+        this.playAnimation(0, this.girlClipList);
+ 
+        this.playAnimation(1, this.boyClipList);
 
-            if(array.result == 1){
-                boyAnimation.play('BoyLose'+ Math.ceil(Math.random()*3 )).speed = this.animSpeed;
-            }else if(array.result == -1){
-                boyAnimation.play('BoyWin').speed = this.animSpeed;
-            }
-        })
-        girlAnimation.once('stop',()=>{
+    }
 
-            if(array.result == 1){
-                girlAnimation.play('GirlWin').speed = this.animSpeed;
-            }else if(array.result == -1){
-                girlAnimation.play('GirlLose'+ Math.ceil(Math.random()*3 )).speed = this.animSpeed;
-            }
-        })
-        switch (array.computer) {
+    girlClipList: string[];
+    boyClipList: string[];
 
-            case TypeMap.TYPE_PAPER:
-                boyAnimation.play('BoyPaper').speed = this.animSpeed;
+    updateList(array: { [key: string]: number }){
 
-                break;
+    /**
+     * 1出拳動畫
+     * ２判斷輸贏動畫(加贏的記號)
+     * ３被打的動畫
+     * 
+     * 
+     */
 
-            case TypeMap.TYPE_SISSORS:
-                boyAnimation.play('BoyScissors').speed = this.animSpeed;
+        let girlList: string[] = [];
+        
+        let boyList: string[] = [];
 
-                break;
-            case TypeMap.TYPE_STONE:
-                boyAnimation.play('BoyStone').speed = this.animSpeed;
-
-                break;
-
-        }
         switch (array.player) {
 
             case TypeMap.TYPE_PAPER:
-                girlAnimation.play('GirlPaper').speed = this.animSpeed;
-
+                girlList.push('GirlPaper');
+                if(array.result == 1){
+                    girlList.push('GirlPaperWin');
+                    
+                }
                 break;
 
             case TypeMap.TYPE_SISSORS:
-                girlAnimation.play('GirlScissors').speed = this.animSpeed;
-
+                girlList.push('GirlScissors');
+                if(array.result == 1){
+                    girlList.push('GirlScissorsWin');
+                    
+                }
                 break;
             case TypeMap.TYPE_STONE:
-                girlAnimation.play('GirlStone').speed = this.animSpeed;
+                girlList.push('GirlStone');
+                if(array.result == 1){
+                    girlList.push('GirlStoneWin');
+                    
+                }
+                break;
+                
 
+        }
+
+
+        switch (array.computer) {
+
+            case TypeMap.TYPE_PAPER:
+                boyList.push('BoyPaper');
+                if(array.result == -1){
+                    boyList.push('BoyPaperWin');
+                    
+                }
+                break;
+
+            case TypeMap.TYPE_SISSORS:
+                boyList.push('BoyScissors');
+                if(array.result == -1){
+                    boyList.push('BoyScissorsWin');
+                    
+                }
+                break;
+            case TypeMap.TYPE_STONE:
+                boyList.push('BoyStone');
+                if(array.result == -1){
+                    boyList.push('BoyStoneWin');
+                }
                 break;
 
         }
-        
+        // if(array.result == 0){
+        //     boyList.push('BoyNothing');
+        //     girlList.push('GirlNothing');
+        // }
+        if(array.result == -1){
+            girlList.push('GirlLoss');
+            girlList.push('GirlLose'+ Math.ceil(Math.random()*3 ));
+            
+        }
+        if(array.result == 1){
+            boyList.push('BoyLoss');
+            boyList.push('BoyLose'+ Math.ceil(Math.random()*3 ));
+            
+        }
 
-        // a.play('DefaultBoy').speed =0.3 ;
-
-        // a.once('stop', ()=>{
-
-        //     a.play('BoyWin').speed = 0.3;
-
-
-        // }, this);
-
+        this.girlClipList = girlList;
+        this.boyClipList = boyList;
 
     }
+
+    getAction(who:number, action:string){
+
+        
+        const self = this;
+
+        return cc.sequence(
+            cc.callFunc(function () {
+
+                let state;
+                if (who == 0) {
+                    state = self.girlAnimation.play(action);
+                }else if (who == 1){
+                    state = self.boyAnimation.play(action);
+                }
+                state.speed = self.animSpeed;
+            })
+            ,
+            cc.delayTime(this.delayTime)
+        );
+    }
+
+    playAnimation(who:number, actionList:string[]){
+
+        let animation: cc.Animation;
+        if(who == 0){
+            animation = this.girlAnimation;
+        }else if (who == 1){
+            animation = this.boyAnimation;
+        }
+        let clipList:cc.FiniteTimeAction[] = []
+
+        actionList.forEach(act => {
+            clipList.push(this.getAction(who, act))
+            
+        });
+
+        
+        console.log(actionList);
+        if(actionList.length > 1){
+            animation.node.runAction(cc.sequence(clipList));
+        }else{
+            animation.node.runAction(clipList[0]);
+            this.asyncTest();
+        }
+
+    }
+
+
+
     gameOver() {
         console.log('gameOver');
 

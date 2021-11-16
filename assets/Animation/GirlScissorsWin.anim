@@ -1,9 +1,9 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "BoyLoss",
+  "_name": "GirlScissorsWin",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 0.15,
+  "_duration": 0.11666666666666667,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -14,55 +14,43 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "9378ffa0-0f6d-48d9-8361-23bf6f8eda54"
+              "__uuid__": "67cf8d24-29e1-4ed1-bc60-6f0749630723"
             }
           },
           {
             "frame": 0.016666666666666666,
             "value": {
-              "__uuid__": "80e75184-6c04-4f8e-b9fb-291d208f08ee"
+              "__uuid__": "e6fb76af-bf01-4277-8448-2df36f66cbea"
             }
           },
           {
             "frame": 0.03333333333333333,
             "value": {
-              "__uuid__": "e070ee7e-80f3-4f7d-ad89-541c6d2a68c0"
+              "__uuid__": "2741120c-1615-456d-b523-d393e8d06f4a"
             }
           },
           {
             "frame": 0.05,
             "value": {
-              "__uuid__": "5ffa1923-3123-460e-bcb4-92147494bfb4"
+              "__uuid__": "e680301d-eedc-4e7a-ac49-47434b4de7bd"
             }
           },
           {
             "frame": 0.06666666666666667,
             "value": {
-              "__uuid__": "89e8af62-763e-431f-ae21-6b364bddbd10"
+              "__uuid__": "0f33976d-e060-4bb8-9754-7be39f96442b"
             }
           },
           {
             "frame": 0.08333333333333333,
             "value": {
-              "__uuid__": "6959383a-67f4-41d2-b847-8371134ab6f6"
+              "__uuid__": "4085c0f6-74e1-42f4-80e2-e9e1464fa567"
             }
           },
           {
             "frame": 0.1,
             "value": {
-              "__uuid__": "2e7b1b26-85d3-4837-9e99-b30089a280bd"
-            }
-          },
-          {
-            "frame": 0.11666666666666667,
-            "value": {
-              "__uuid__": "f98110d1-e33d-4697-96a1-ecfa413579a3"
-            }
-          },
-          {
-            "frame": 0.13333333333333333,
-            "value": {
-              "__uuid__": "28f261c1-e2cf-4383-a997-dccf783f075b"
+              "__uuid__": "611f991a-6ded-45f7-9cc6-5705e9c51e98"
             }
           }
         ]

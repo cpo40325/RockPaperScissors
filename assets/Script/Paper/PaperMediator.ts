@@ -11,6 +11,10 @@ export default class PaperMediator extends KYPureMediator {
 
     static NAME = 'PaperMediator'
 
+
+
+    canClick: boolean = true;
+
     constructor(viewComponent: any){
         super(PaperMediator.NAME, viewComponent);
     }
@@ -31,7 +35,14 @@ export default class PaperMediator extends KYPureMediator {
     }
 
     onClick(){
-        this.sendNotification(CommandMap.THREW, TypeMap.TYPE_PAPER);
+        if(this.canClick){
+            this.sendNotification(CommandMap.THREW, TypeMap.TYPE_PAPER);
+            this.canClick = false;
+        }
+    }
+
+    updateClickSwitch(){
+        this.canClick = true;
     }
 
 
