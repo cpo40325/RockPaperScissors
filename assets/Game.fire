@@ -505,7 +505,7 @@
     "_dstBlendFactor": 771,
     "_spriteFrame": null,
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 2,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -514,7 +514,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 0,
-    "_isTrimmedMode": true,
+    "_isTrimmedMode": false,
     "_atlas": null,
     "_id": "bc+Ba2IfFB5Ly8AisCoEPP"
   },
@@ -723,7 +723,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 150
+      "height": 0
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -735,7 +735,7 @@
       "ctor": "Float64Array",
       "array": [
         357.348,
-        96.367,
+        100,
         0,
         0,
         0,
@@ -802,7 +802,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 150
+      "height": 0
     },
     "_resize": 0,
     "_N$layoutType": 1,
@@ -868,7 +868,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 150
+      "height": 0
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -880,7 +880,7 @@
       "ctor": "Float64Array",
       "array": [
         -364.966,
-        91.556,
+        100,
         0,
         0,
         0,
@@ -947,7 +947,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 150
+      "height": 0
     },
     "_resize": 0,
     "_N$layoutType": 1,
@@ -961,7 +961,7 @@
     "_N$paddingRight": 0,
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
-    "_N$spacingX": 25,
+    "_N$spacingX": 0,
     "_N$spacingY": 0,
     "_N$verticalDirection": 1,
     "_N$horizontalDirection": 0,

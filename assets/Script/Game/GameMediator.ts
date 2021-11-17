@@ -1,9 +1,11 @@
+import KYPureFacade from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Core/KYPureFacade";
 import KYPureMediator from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Mediator/KYPureMediator";
 import KYPureNotification from "../KYCreatorSDK/DesignPatterns/KYPrueMVC/Observer/KYPureNotification";
 import CommandMap from "../Map/CommandMap";
 import NotificationMap from "../Map/NotificationMap";
 import TypeMap from "../Map/TypeMap";
 import Game from "./Game";
+import GameProxy from "./GameProxy";
 
 const { ccclass, property } = cc._decorator;
 
@@ -42,7 +44,11 @@ export default class GameMediator extends KYPureMediator {
             if(clip.search('Win') != -1 || clip.search('Lose') != -1){
                 
 
-                this.restartAnimation();
+                if(this.getProxy().isGameOver){
+                    this.gameOver();
+                }else{
+                    this.restartAnimation();
+                }
             }
             
 
@@ -245,10 +251,24 @@ export default class GameMediator extends KYPureMediator {
 
 
 
+
+    getProxy(): GameProxy{
+
+        return this.getFacade().retrieveProxy(GameProxy.NAME);
+    }
+
     gameOver() {
         console.log('gameOver');
+        
+        if(this.getProxy().boy_score == GameProxy.WIN){
 
-        cc.director.pause()
+            this.sendNotification(NotificationMap.BOY_WIN);
+        }else if(this.getProxy().girl_score == GameProxy.WIN){
+            this.sendNotification(NotificationMap.GIRL_WIN);
+
+        }
+        
+
     }
 
 

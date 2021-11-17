@@ -21,7 +21,7 @@ export default class PaperMediator extends KYPureMediator {
 
 
     listNotificationInterests(): string[] {
-        return [CommandMap.RESTART];
+        return [CommandMap.RESTART, CommandMap.THREW];
     }
 
 
@@ -29,7 +29,11 @@ export default class PaperMediator extends KYPureMediator {
 
         switch (notificantion.getName()) {
             case CommandMap.RESTART:
-                this.updateClickSwitch();
+                this.updateClickSwitch(true);
+
+            break;
+                case CommandMap.THREW:
+                this.updateClickSwitch(false);
                 break;
         }
 
@@ -48,8 +52,8 @@ export default class PaperMediator extends KYPureMediator {
         }
     }
 
-    updateClickSwitch() {
-        this.canClick = true;
+    updateClickSwitch(b:boolean) {
+        this.canClick = b;
     }
 
 

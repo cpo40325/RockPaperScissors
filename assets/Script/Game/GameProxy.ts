@@ -88,7 +88,8 @@ export default class GameProxy extends KYPrueProxy {
         var array: { [key: string]: number } = {
             'player': player,
             'computer': computer,
-            'result': result
+            'result': result,
+            'isOver': 0
         }
 
 
@@ -105,6 +106,10 @@ export default class GameProxy extends KYPrueProxy {
             this.sendNotification(NotificationMap.BOY_SCORE);
         }
 
+        if(this.boy_score == 3 || this.girl_score == 3){
+            this.isGameOver = true;
+        }
+
 
         this.sendNotification(NotificationMap.THREW_RESULT, array);
 
@@ -114,7 +119,7 @@ export default class GameProxy extends KYPrueProxy {
     playerThrew(playerThrew) {
 
         if (this.isGameOver) {
-            // return;
+            return;
         }
         this.compare(playerThrew, this.computerRandomThrew());
     }

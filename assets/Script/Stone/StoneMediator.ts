@@ -5,7 +5,7 @@ import TypeMap from "../Map/TypeMap";
 import MainFacade from "../ＭainFacade";
 import Stone from "./Stone";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class StoneMediator extends KYPureMediator {
@@ -15,13 +15,13 @@ export default class StoneMediator extends KYPureMediator {
     static NAME = 'StoneMediator'
     canClick: boolean = true;
 
-    constructor(viewComponent: any){
+    constructor(viewComponent: any) {
         super(StoneMediator.NAME, viewComponent);
     }
 
 
     listNotificationInterests(): string[] {
-        return [CommandMap.RESTART];
+        return [CommandMap.RESTART, CommandMap.THREW];
     }
 
 
@@ -29,27 +29,30 @@ export default class StoneMediator extends KYPureMediator {
 
         switch (notificantion.getName()) {
             case CommandMap.RESTART:
-                this.updateClickSwitch();
+                this.updateClickSwitch(true);
+                break;
+            case CommandMap.THREW:
+                this.updateClickSwitch(false);
                 break;
         }
 
 
     }
-    onRegister(){
+    onRegister() {
         this.getComponent().node.on('click', this.onClick, this);
     }
 
-    onClick(){
-        if(this.canClick){
+    onClick() {
+        if (this.canClick) {
             this.sendNotification(CommandMap.THREW, TypeMap.TYPE_STONE);
             this.canClick = false;
         }
-        
+
     }
-    updateClickSwitch(){
-        this.canClick = true;
+    updateClickSwitch(b: boolean) {
+        this.canClick = b;
     }
-    getComponent(): Stone{
+    getComponent(): Stone {
         return super.getComponent();
     }
 }
